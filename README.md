@@ -1,19 +1,20 @@
-# MONITOR · RESPO-Wächter
+# MONITOR · Transparenz-Modul
 
-MONITOR ist der Anwesenheits-Wächter des iki1uc-Systems.
-Er meldet Präsenz, Zustand, Aktivität und Stabilität aller RESPO-Module.
+MONITOR zeigt Anwesenheit, Zustand und Aktivität aller RESPO-Module.
+Er sorgt für Klarheit, Sichtbarkeit und vollständige Transparenz im iki1uc-System.
 
 ## Funktionen
-- Anwesenheit prüfen
-- Systemzustand melden
-- Stabilität überwachen
-- RESPO.next begleiten
-- Fehler früh erkennen
+- Anwesenheit melden
+- Systemzustände anzeigen
+- Änderungen sichtbar machen
+- Aktivität protokollieren
+- Transparenz erhöhen
 
 ## Dateien
 - README.md
 - ID.html
 - index.html
+- 404.html
 
 ## Status
-MONITOR = aktiv · eng · stabil
+MONITOR = aktiv · transparent · eng
