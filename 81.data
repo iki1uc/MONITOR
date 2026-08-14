@@ -1,34 +1,14 @@
-function build81(ursache) {
-
-    // 1. Ursache → Impuls
-    let impuls = ursache;
-
-    // 2. MONITOR → Transparenz
-    let signal = {
-        monitor: "sichtbar",
-        report: "anwesend",
-        log: "eingetragen",
-        echo: "rückgemeldet",
-        trace: "verfolgt"
-    };
- 
-    // 3. ID → Identität
-    let identity = {
-        core: "81",
-        role: "mein630",
-        state: "aktiv",
-        ready: "100%",
-        loc: "/81/"
-    };
-
-    // 4. TOR → Abbildung
-    let abbildung = {
-        stage: "aktiv",
-        orbit: 0,
-        delta: impuls,
-        praesenz: ["1X", "X4", "IX", "XI"]
-    };
-
-    // 5. Wirkung → neue 81-Bildung
-    return {signal, identity, abbildung};
+{
+  "source": "mein630",
+  "type": "81",
+  "fields": {
+    "monitor": "sichtbar",
+    "report": "anwesend",
+    "log": "eingetragen",
+    "echo": "rückgemeldet",
+    "trace": "verfolgt",
+    "praesenz": ["1X", "X4", "IX", "XI"]
+  },
+  "orbit": 0,
+  "stage": "aktiv"
 }
