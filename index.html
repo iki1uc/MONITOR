@@ -2,10 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>MONITOR · Transparenz</title>
+<title>MONITOR · Multi-Funktion</title>
+
 <style>
 body{background:#000;color:#0f0;font-family:monospace;padding:40px;}
+section{margin-bottom:40px;}
+
 pre{background:#111;border-left:3px solid #6cf;padding:12px;}
+button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;margin-bottom:10px;}
+
 .block{padding:10px;margin:10px 0;background:#111;}
 .b1{border-left:4px solid #0f0;} /* Monitor */
 .b2{border-left:4px solid #6cf;} /* Report */
@@ -13,76 +18,44 @@ pre{background:#111;border-left:3px solid #6cf;padding:12px;}
 .b4{border-left:4px solid #f00;} /* Echo */
 .b5{border-left:4px solid #ff0;} /* Trace */
 .b6{border-left:4px solid #c0f;} /* 1X / X4 / IX / XI */
-button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;}
-</style>
-</head>
-<body>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>MONITOR · 81-System</title>
-<style>
-body{background:#000;color:#0f0;font-family:monospace;padding:40px;}
-pre{background:#111;border-left:3px solid #6cf;padding:12px;}
-button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;}
 </style>
 </head>
 <body>
 
+<!-- SECTION 1: 81-System -->
+<section>
 <h1>MONITOR · 81-System</h1>
 
-<button onclick="run()">81 erzeugen</button>
-<pre id="out">Bereit…</pre>
+<button onclick="run81()">81 erzeugen</button>
+<pre id="out81">Bereit…</pre>
+</section>
 
-<script src="81.js"></script>
-<script>
-function run(){
-    const result = build81("mein630-impuls");
-    out.textContent = JSON.stringify(result, null, 2);
-}
-</script>
-
-</body>
-</html>
-
+<!-- SECTION 2: Transparenz-Felder -->
+<section>
 <h1>MONITOR · Transparenz</h1>
 
-<button onclick="run()">CHECK</button>
-<pre id="out">Bereit…</pre>
+<button onclick="runTrans()">CHECK</button>
+<pre id="outTrans">Bereit…</pre>
 
-<!-- 1 — Monitor -->
-<div class="block b1">
-<b>MONITOR:</b> kontinuierliche Sichtbarkeit
-</div>
+<div class="block b1"><b>MONITOR:</b> kontinuierliche Sichtbarkeit</div>
+<div class="block b2"><b>REPORT:</b> Anwesenheitsmeldung</div>
+<div class="block b3"><b>LOG:</b> System‑Eintrag</div>
+<div class="block b4"><b>ECHO:</b> Rückmeldung</div>
+<div class="block b5"><b>TRACE:</b> Transparenz über Abläufe</div>
+<div class="block b6"><b>1X · X4 · IX · XI:</b> vierfache Präsenz‑Stufe</div>
+</section>
 
-<!-- 2 — Report -->
-<div class="block b2">
-<b>REPORT:</b> Anwesenheitsmeldung
-</div>
-
-<!-- 3 — Log -->
-<div class="block b3">
-<b>LOG:</b> System‑Eintrag
-</div>
-
-<!-- 4 — Echo -->
-<div class="block b4">
-<b>ECHO:</b> Rückmeldung
-</div>
-
-<!-- 5 — Trace -->
-<div class="block b5">
-<b>TRACE:</b> Transparenz über Abläufe
-</div>
-
-<!-- 6 — 1X · X4 · IX · XI -->
-<div class="block b6">
-<b>1X · X4 · IX · XI:</b> vierfache Präsenz‑Stufe
-</div>
+<script src="81.js"></script>
 
 <script>
-function run(){
+// 81 erzeugen
+function run81(){
+    const result = build81("mein630-impuls");
+    out81.textContent = JSON.stringify(result, null, 2);
+}
+
+// Transparenz-Check
+function runTrans(){
     const presence = {
         monitor: "active",
         transparency: "high",
@@ -90,7 +63,7 @@ function run(){
         timestamp: Date.now(),
         stage: "MONITOR online"
     };
-    out.textContent = JSON.stringify(presence, null, 2);
+    outTrans.textContent = JSON.stringify(presence, null, 2);
 }
 </script>
 
