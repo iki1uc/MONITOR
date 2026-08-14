@@ -1,70 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>MONITOR · Multi-Funktion</title>
+<title>MONITOR · OS · 243 · C81</title>
 
 <style>
-body{background:#000;color:#0f0;font-family:monospace;padding:40px;}
-section{margin-bottom:40px;}
-
-pre{background:#111;border-left:3px solid #6cf;padding:12px;}
-button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;margin-bottom:10px;}
-
-.block{padding:10px;margin:10px 0;background:#111;}
-.b1{border-left:4px solid #0f0;} /* Monitor */
-.b2{border-left:4px solid #6cf;} /* Report */
-.b3{border-left:4px solid #f60;} /* Log */
-.b4{border-left:4px solid #f00;} /* Echo */
-.b5{border-left:4px solid #ff0;} /* Trace */
-.b6{border-left:4px solid #c0f;} /* 1X / X4 / IX / XI */
+body{background:#000;color:#0f0;font-family:monospace;padding:20px;}
+.box{background:#111;padding:20px;margin-bottom:20px;border:1px solid #0f0;}
+button{background:#111;color:#0f0;border:1px solid #0f0;padding:10px 20px;margin:5px;}
+pre{white-space:pre-wrap;}
 </style>
 </head>
+
 <body>
 
-<!-- SECTION 1: 81-System -->
-<section>
-<h1>MONITOR · 81-System</h1>
+<h1>MONITOR · OS · 243 · C81</h1>
 
-<button onclick="run81()">81 erzeugen</button>
-<pre id="out81">Bereit…</pre>
-</section>
+<div class="box">
+    <button onclick="monitor()">MONITOR starten</button>
+    <pre id="out">Bereit…</pre>
+</div>
 
-<!-- SECTION 2: Transparenz-Felder -->
-<section>
-<h1>MONITOR · Transparenz</h1>
+<script type="module">
 
-<button onclick="runTrans()">CHECK</button>
-<pre id="outTrans">Bereit…</pre>
+import OS from "./OS.js";
+import { C81 } from "./81.js";
+import { PQ243 } from "./9.js";
+import DATA81 from "./81.data";
 
-<div class="block b1"><b>MONITOR:</b> kontinuierliche Sichtbarkeit</div>
-<div class="block b2"><b>REPORT:</b> Anwesenheitsmeldung</div>
-<div class="block b3"><b>LOG:</b> System‑Eintrag</div>
-<div class="block b4"><b>ECHO:</b> Rückmeldung</div>
-<div class="block b5"><b>TRACE:</b> Transparenz über Abläufe</div>
-<div class="block b6"><b>1X · X4 · IX · XI:</b> vierfache Präsenz‑Stufe</div>
-</section>
+window.monitor = function(){
 
-<script src="81.js"></script>
+    const out = {
 
-<script>
-// 81 erzeugen
-function run81(){
-    const result = build81("mein630-impuls");
-    out81.textContent = JSON.stringify(result, null, 2);
-}
+        os: OS.init(),
+        c81: C81.init(),
+        pq243: PQ243.measure(),
+        data81: DATA81,
 
-// Transparenz-Check
-function runTrans(){
-    const presence = {
-        monitor: "active",
-        transparency: "high",
-        system: "visible",
-        timestamp: Date.now(),
-        stage: "MONITOR online"
+        fusion: "OS + 243 + C81 → 81-FINDUNG",
+        timestamp: Date.now()
     };
-    outTrans.textContent = JSON.stringify(presence, null, 2);
-}
+
+    document.getElementById("out").innerText =
+        JSON.stringify(out, null, 2);
+};
+
 </script>
 
 </body>
