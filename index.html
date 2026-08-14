@@ -2,27 +2,65 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>MONITOR · Presence</title>
+<title>MONITOR · Transparenz</title>
 <style>
 body{background:#000;color:#0f0;font-family:monospace;padding:40px;}
 pre{background:#111;border-left:3px solid #6cf;padding:12px;}
+.block{padding:10px;margin:10px 0;background:#111;}
+.b1{border-left:4px solid #0f0;} /* Monitor */
+.b2{border-left:4px solid #6cf;} /* Report */
+.b3{border-left:4px solid #f60;} /* Log */
+.b4{border-left:4px solid #f00;} /* Echo */
+.b5{border-left:4px solid #ff0;} /* Trace */
+.b6{border-left:4px solid #c0f;} /* 1X / X4 / IX / XI */
 button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;}
 </style>
 </head>
 <body>
 
-<h1>MONITOR · Anwesenheit</h1>
+<h1>MONITOR · Transparenz</h1>
 
 <button onclick="run()">CHECK</button>
 <pre id="out">Bereit…</pre>
+
+<!-- 1 — Monitor -->
+<div class="block b1">
+<b>MONITOR:</b> kontinuierliche Sichtbarkeit
+</div>
+
+<!-- 2 — Report -->
+<div class="block b2">
+<b>REPORT:</b> Anwesenheitsmeldung
+</div>
+
+<!-- 3 — Log -->
+<div class="block b3">
+<b>LOG:</b> System‑Eintrag
+</div>
+
+<!-- 4 — Echo -->
+<div class="block b4">
+<b>ECHO:</b> Rückmeldung
+</div>
+
+<!-- 5 — Trace -->
+<div class="block b5">
+<b>TRACE:</b> Transparenz über Abläufe
+</div>
+
+<!-- 6 — 1X · X4 · IX · XI -->
+<div class="block b6">
+<b>1X · X4 · IX · XI:</b> vierfache Präsenz‑Stufe
+</div>
 
 <script>
 function run(){
     const presence = {
         monitor: "active",
-        respo_next: "present",
-        system: "stable",
-        timestamp: Date.now()
+        transparency: "high",
+        system: "visible",
+        timestamp: Date.now(),
+        stage: "MONITOR online"
     };
     out.textContent = JSON.stringify(presence, null, 2);
 }
