@@ -11,7 +11,7 @@ function build81(ursache) {
         echo: "rückgemeldet",
         trace: "verfolgt"
     };
-
+ 
     // 3. ID → Identität
     let identity = {
         core: "81",
