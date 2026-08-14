@@ -17,6 +17,34 @@ button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;}
 </style>
 </head>
 <body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MONITOR · 81-System</title>
+<style>
+body{background:#000;color:#0f0;font-family:monospace;padding:40px;}
+pre{background:#111;border-left:3px solid #6cf;padding:12px;}
+button{background:#111;color:#0f0;border:1px solid #333;padding:8px 16px;}
+</style>
+</head>
+<body>
+
+<h1>MONITOR · 81-System</h1>
+
+<button onclick="run()">81 erzeugen</button>
+<pre id="out">Bereit…</pre>
+
+<script src="81.js"></script>
+<script>
+function run(){
+    const result = build81("mein630-impuls");
+    out.textContent = JSON.stringify(result, null, 2);
+}
+</script>
+
+</body>
+</html>
 
 <h1>MONITOR · Transparenz</h1>
 
