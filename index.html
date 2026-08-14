@@ -23,10 +23,11 @@ pre{white-space:pre-wrap;}
 
 <script type="module">
 
-import OS from "./OS.js";
+// KORREKTE IMPORTS
+import { OS } from "./OS.js";
 import { C81 } from "./81.js";
 import { PQ243 } from "./9.js";
-import DATA81 from "./81.data";
+import { DATA81 } from "./81.data";
 
 window.monitor = function(){
 
@@ -35,17 +36,4 @@ window.monitor = function(){
         os: OS.init(),
         c81: C81.init(),
         pq243: PQ243.measure(),
-        data81: DATA81,
-
-        fusion: "OS + 243 + C81 → 81-FINDUNG",
-        timestamp: Date.now()
-    };
-
-    document.getElementById("out").innerText =
-        JSON.stringify(out, null, 2);
-};
-
-</script>
-
-</body>
-</html>
+        data
